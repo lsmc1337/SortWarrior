@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "tcs3472.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,21 +97,24 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 
+  uint16_t colors_data[4] = {0,0,0,0};
+
   // Start UART recieving
   HAL_UART_Receive_IT(&huart1,uart_rx_buffer,1);
-  
-  if(tcs3472_init(&hi2c2)==HAL_OK)
-  {
-    uart_tx_buffer[0] = 0x67;
-    HAL_UART_Transmit(&huart1, uart_tx_buffer, 1, 100);
-  }
-  else
-  {
-    uart_tx_buffer[0] = 0x00;
-    HAL_UART_Transmit(&huart1, uart_tx_buffer, 1, 100);
-  }
 
-  uint16_t colors[4];
+  // Trying to init TCS3472 ("Madness is the repetition of the same action, hoping for a different result...")
+  while(1)
+  {
+    if(tcs3472_init(&hi2c2,TCS3472_GAIN_60X,TCS3472_RGBC_TIMING_2_4_MS)==HAL_OK)
+    {
+      for(uint8_t i=0;i<10;i++)
+      {
+        HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+        HAL_Delay(30);
+      }
+      break;
+    }
+  }
 
   /* USER CODE END 2 */
 
@@ -118,9 +122,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    tcs3472_read_colors(&hi2c2, colors);
-    uart_tx_buffer[0] = colors[0];
-    HAL_UART_Transmit(&huart1, uart_tx_buffer, 1, 100);
+    tcs3472_read_colors(&hi2c2, colors_data);
+
+    if(colors_data[3]>256 && colors_data[1] < 400 && colors_data[2] < 400 )
+    {
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvision.a CMakeFiles/vision.dir/lib/vision/src/detect.cpp.o
+/usr/bin/ranlib libvision.a

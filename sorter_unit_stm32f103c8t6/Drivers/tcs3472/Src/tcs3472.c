@@ -19,7 +19,7 @@
 #define TIMEOUT 100
 
 
-HAL_StatusTypeDef tcs3472_init(I2C_HandleTypeDef *hi2c)
+HAL_StatusTypeDef tcs3472_init(I2C_HandleTypeDef *hi2c, uint8_t rgbc_gain, uint8_t rgbc_timing)
 {
     uint8_t tx_data[2]; 
 
@@ -28,25 +28,33 @@ HAL_StatusTypeDef tcs3472_init(I2C_HandleTypeDef *hi2c)
         return HAL_ERROR;
     }
 
-    // CONFIGURE SENSOR
-
-    // RGBC timing to 2.4ms
-    tx_data[0] = (1<<7)|ATIME_REG;
-    tx_data[1] = 0xFF;
+    // Powering off device and RGBC first
+    tx_data[0] = (1<<7)|ENABLE_REG;
+    tx_data[1] = 0x00;
     if(HAL_I2C_Master_Transmit(hi2c, TCS3472_ADDR, tx_data, 2, TIMEOUT)) {
         return HAL_ERROR;
     }
 
-    // Config WLONG to 0
+
+    // CONFIGURING THE SENSOR
+
+    // Set RGBC timing
+    tx_data[0] = (1<<7)|ATIME_REG;
+    tx_data[1] = rgbc_timing;
+    if(HAL_I2C_Master_Transmit(hi2c, TCS3472_ADDR, tx_data, 2, TIMEOUT)) {
+        return HAL_ERROR;
+    }
+
+    // Set WLONG to 0
     tx_data[0] = (1<<7)|CONFIG_REG;
     tx_data[1] = 0x00;
     if(HAL_I2C_Master_Transmit(hi2c, TCS3472_ADDR, tx_data, 2, TIMEOUT)) {
         return HAL_ERROR;
     }
 
-    // Gain to 1x
+    // Set gain
     tx_data[0] = (1<<7)|CONTROL_REG;
-    tx_data[1] = 0x00;
+    tx_data[1] = rgbc_gain;
     if(HAL_I2C_Master_Transmit(hi2c, TCS3472_ADDR, tx_data, 2, TIMEOUT)) {
         return HAL_ERROR;
     }
