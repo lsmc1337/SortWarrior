@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SortWarrior.dir/link.d"
   "CMakeFiles/SortWarrior.dir/src/main.cpp.o"
   "CMakeFiles/SortWarrior.dir/src/main.cpp.o.d"
   "SortWarrior"

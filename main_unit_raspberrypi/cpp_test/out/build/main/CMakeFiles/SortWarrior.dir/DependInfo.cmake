@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/src/main.cpp" "CMakeFiles/SortWarrior.dir/src/main.cpp.o" "gcc" "CMakeFiles/SortWarrior.dir/src/main.cpp.o.d"
-  "" "SortWarrior" "gcc" "CMakeFiles/SortWarrior.dir/link.d"
+  "/home/matrix/WORK/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/src/main.cpp" "CMakeFiles/SortWarrior.dir/src/main.cpp.o" "gcc" "CMakeFiles/SortWarrior.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -8,34 +8,34 @@
 		},
 		"paths" : 
 		{
-			"cmake" : "/usr/bin/cmake",
-			"cpack" : "/usr/bin/cpack",
-			"ctest" : "/usr/bin/ctest",
-			"root" : "/usr/share/cmake"
+			"cmake" : "/opt/st/stm32cubeclt_1.19.0/CMake/bin/cmake",
+			"cpack" : "/opt/st/stm32cubeclt_1.19.0/CMake/bin/cpack",
+			"ctest" : "/opt/st/stm32cubeclt_1.19.0/CMake/bin/ctest",
+			"root" : "/opt/st/stm32cubeclt_1.19.0/CMake/share/cmake-3.28"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
-			"major" : 4,
-			"minor" : 2,
+			"major" : 3,
+			"minor" : 28,
 			"patch" : 1,
-			"string" : "4.2.1",
+			"string" : "3.28.1",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-69ba2487acd4c53f3398.json",
+			"jsonFile" : "codemodel-v2-f2ba5b2e92f305efd95a.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 9
+				"minor" : 6
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-3541650625973d7ae708.json",
+			"jsonFile" : "cache-v2-d56631b4b0679c437302.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,12 +44,12 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-af8d38a80dd7928cd242.json",
+			"jsonFile" : "cmakeFiles-v1-8aead94d3285be2070aa.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
 				"major" : 1,
-				"minor" : 1
+				"minor" : 0
 			}
 		},
 		{
@@ -90,7 +90,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-3541650625973d7ae708.json",
+						"jsonFile" : "cache-v2-d56631b4b0679c437302.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -99,12 +99,12 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-69ba2487acd4c53f3398.json",
+						"jsonFile" : "codemodel-v2-f2ba5b2e92f305efd95a.json",
 						"kind" : "codemodel",
 						"version" : 
 						{
 							"major" : 2,
-							"minor" : 9
+							"minor" : 6
 						}
 					},
 					{
@@ -117,12 +117,12 @@
 						}
 					},
 					{
-						"jsonFile" : "cmakeFiles-v1-af8d38a80dd7928cd242.json",
+						"jsonFile" : "cmakeFiles-v1-8aead94d3285be2070aa.json",
 						"kind" : "cmakeFiles",
 						"version" : 
 						{
 							"major" : 1,
-							"minor" : 1
+							"minor" : 0
 						}
 					}
 				]

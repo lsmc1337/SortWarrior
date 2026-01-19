@@ -1,4 +1,0 @@
-/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/build/CMakeFiles/vision.dir
-/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/build/CMakeFiles/SortWarrior.dir
-/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/build/CMakeFiles/edit_cache.dir
-/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/build/CMakeFiles/rebuild_cache.dir

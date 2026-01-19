@@ -44,11 +44,6 @@
 			}
 		]
 	},
-	"codemodelVersion" : 
-	{
-		"major" : 2,
-		"minor" : 9
-	},
 	"compileGroups" : 
 	[
 		{
@@ -62,11 +57,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/usr/local/include/opencv4"
+					"path" : "/usr/include/opencv4"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/matrix/WORK/DEV/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/lib/vision/inc"
+					"path" : "/home/matrix/WORK/PROJECTS/SortWarrior/main_unit_raspberrypi/cpp_test/lib/vision/inc"
 				}
 			],
 			"language" : "CXX",
